@@ -1,0 +1,68 @@
+{% load static %}
+
+<!--title profile_img user_name-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/base_style.css' %}">
+    {% if them == 'dark' %}
+    <link type="text/css" rel="stylesheet" href="{% static 'themes/dark.css' %}">
+    {% else %}
+    <link type="text/css" rel="stylesheet" href="{% static 'themes/light.css' %}">
+    {% endif %}
+    {% block style %} {% endblock %}
+    <title>{{ title }}</title>
+</head>
+<body>
+     <header>
+        {% if language == 'English' %}
+        <a href="{% url 'main:statistics' %}" class="btn-home">Statistic</a>
+        <span class="menu-button">Menu</span>
+        {% else %}
+        <a href="{% url 'main:statistics' %}" class="btn-home">Статистика</a>
+        <span class="menu-button">Меню</span>
+        {% endif %}
+        <div class="dropdown">
+            <div class="profile-header">
+                <a href="{% url 'user_profiles:profile' %}" class="profile-header profile">
+                <img src="{% static 'img/profile_icon.png' %}" alt="Profile Picture" class="profile-img">
+                <div class="profile-info">
+                    <h4>{{ user_name }}</h4>
+                </div>
+                </a>
+            </div>
+            <ul class="menu">
+                {% if language == 'English' %}
+                <li><button class="menu-item"><a href="{% url 'users:edit' %}" class="button-a">Settings</a></button></li>
+                <!-- <li><button class="menu-item toggle-switch">
+                    <span>Theme</span>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-switch">
+                        <span class="slider"></span>
+                    </label>
+                    </button>
+                </li> -->
+                <!-- <li><button class="menu-item" ><a href="" class="button-a">Help</a></button></li> -->
+                <li><button class="menu-item logout-btn"><a href="{% url 'users:logout' %}" class="button-a logout">Log Out</a></button></li>
+                {% else %}
+                <li><button class="menu-item"><a href="{% url 'users:edit' %}" class="button-a">Настройки</a></button></li>
+                <li><button class="menu-item logout-btn"><a href="{% url 'users:logout' %}" class="button-a logout">Выйти</a></button></li>
+                {% endif %}
+            </ul>
+        </div>
+    </header>
+    {% block content %} {% endblock %}
+    <footer>
+        {% if language == 'English' %}
+        <p class="footer-text">This website was made by me.</p>
+        {% else %}
+        <p class="footer-text">Сайт сделан мной.</p>
+        {% endif %}
+    </footer>
+</body>
+<script src="{% static 'js/base_script.js' %}"></script>
+{% block script %} {% endblock %}
+</html>

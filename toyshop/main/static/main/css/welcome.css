@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --main-bg-color: rgb(200, 200, 200);
+    --main-border-color: rgba(100, 100, 100, 0.5);
+
+    --main-text-color: black;
+    --highlight-text-color: black;
+
+    --button-color: rgb(200, 200, 200);
+    --button-highlight-color: black;
+    --button-hover-color: rgb(150, 150, 150);
+
+    --font-size-main: 1rem;
+    --font-size-big: 2.5rem;
+    --font-size-mid: 1.2rem;
+    --font-size-low: 0.8rem;
+}
+
+*{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/* header */
+header {
+    height: 20em;
+    border: 1px solid var(--main-border-color);
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.website-name {
+    width: fit-content;
+    height: fit-content;
+    font-size: var(--font-size-big);
+}
+
+/* main */
+main{
+    margin-top: 5em;
+    margin-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+}
+
+/* welcome */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome h2 {
+    font-size: var(--font-size-big);
+    color: var(--main-color);
+}
+
+.welcome p {
+    margin: 20px 0;
+    font-size: var(--font-size-mid);
+}
+
+.welcome .btn {
+    padding: 10px 20px;
+    font-size: var(--font-size-main);
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-log-in {
+    background: var(--button-color);
+    color: var(--main-text-color)
+}
+
+.btn-log-in:hover {
+    background: var(--button-hover-color);
+}
+
+.btn-sing-in {
+    background: var(--button-color);
+    color: var(--main-text-color)
+}
+
+.btn-sing-in:hover {
+    background: var(--button-hover-color);
+}
+
+/* footer */
+footer {
+    height: 10em;
+    font-size: var(--font-size-low);
+    border-top: 1px solid var(--main-border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

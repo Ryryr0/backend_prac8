@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --main-bg-color: rgb(200, 200, 200);
+    --main-border-color: rgba(100, 100, 100, 0.5);
+
+    --main-text-color: rgb(16, 16, 16);
+    --highlight-text-color: #ffa726;
+
+    --button-color: rgb(200, 200, 200);
+    --button-highlight-color: #ffa726;
+    --button-highlight-hover-color: #e59420;
+    --button-hover-color: rgb(150, 150, 150);
+
+    --font-size-main: 1rem;
+    --font-size-big: 2.5rem;
+    --font-size-mid: 1.5rem;
+    --font-size-low: 0.8rem;
+
+    --white: rgb(250, 250, 250);
+    --black: rgb(16, 16, 16);
+    --red: #ff5252;
+    --blue: #007bff;
+    --blue-hover: #0056b3;
+}
+
+*{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: var(--font-size-main);
+    color: var(--main-text-color);
+    font-size: var(--font-size-main);
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header */
+header {
+    position: sticky;
+    top: 0;
+    height: 4em;
+    border: 1px solid var(--main-border-color);
+    background-color: var(--main-bg-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    z-index: 10;
+}
+
+/* menu */
+.menu-button {
+    padding: 0.3em;
+    margin-right: 10.5em;
+    grid-column: 3;
+    justify-self: right;
+    background-color: var(--button-highlight-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    font-size: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: var(--button-highlight-hover-color);
+}
+
+/* logo */
+.btn-home {
+    width: fit-content;
+    grid-column: 1;
+    padding: 10px 15px;
+    margin-left: 10.5em;
+    border-radius: 5px;
+    background-color: var(--button-highlight-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-home:hover {
+    background-color: var(--button-highlight-hover-color);
+}
+
+/* Dropdown container */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 4em;
+    right: 10em;
+    width: 16em;
+    background-color: var(--main-bg-color);
+    border: 1px solid var(--main-border-color);
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile header */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--main-border-color);
+}
+
+.profile-info h4 {
+    margin: 0;
+    font-size: var(--font-size-mid);
+}
+
+.profile {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.profile:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Menu items */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.button-a {
+    width: 100%;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-main);
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+}
+
+.menu-item:hover {
+    background: var(--button-hover-color);
+}
+
+/* log out buton */
+.button-a.logout {
+    color: var(--red);
+}
+
+.menu-item.logout-btn:hover {
+    background: var(--red);
+}
+
+.menu-item.logout-btn:hover > .button-a {
+    color: var(--white);
+}
+
+/* Toggle switch */
+.menu-item span {
+    flex: 1;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+}
+
+.toggle-switch:hover {
+    cursor: auto;
+    background-color: var(--main-bg-color);
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--white);
+    border: 1px solid var(--main-border-color);
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: var(--button-highlight-color);
+    bottom: 2.25px;
+    left: 3px;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: var(--black);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* footer */
+footer {
+    height: 4em;
+    background-color: var(--main-bg-color);
+    font-size: var(--font-size-low);
+    border-top: 1px solid var(--main-border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

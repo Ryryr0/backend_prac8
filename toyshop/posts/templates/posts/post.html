@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load get_only_file_name %}
+
+{% block style %}
+    <link type="text/css" rel="stylesheet" href="{% static 'posts/css/post.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1>{{ post.title }}</h1>
+            <a href="{{ post.get_author_url }}" class="author">By {{ post.author }}</a>
+            <div class="content">{{ post.content }}</div>
+    
+            {% for file in files %}
+            {% if file %}
+            <a href="{{ file.file.url }}" download class="file">
+                <div class="file-icon">📄</div>
+                <div class="file-info">
+                    <div class="file-name">{{ file.file.name|get_only_file_name }}</div>
+                    <div class="file-size">{{ file.file.size|filesizeformat }}</div>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+
+            {% if is_owner %}
+            <div class="edit-btn-conteiner">
+                <a href="#" class="edit-btn">Edit</a>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

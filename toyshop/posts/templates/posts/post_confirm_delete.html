@@ -1,0 +1,7 @@
+{% load static %}
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    {{ form }}
+    <input type="submit" id="delete-btn" value="Confirm">
+</form>
+<script src="{% static 'posts/js/post_confirm_delete.js' %}"></script>

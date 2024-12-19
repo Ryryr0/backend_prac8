@@ -1,0 +1,78 @@
+.menu-button { 
+    display: none;
+}
+
+main {
+    display: block;
+    align-content: center;
+    justify-items: center;
+}
+
+/* form */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--main-border-color);
+    margin: 1em;
+}
+
+/* Form title */
+.form-title {
+    text-align: center;
+    font-size: var(--font-size-big);
+    margin-bottom: 20px;
+    color: var(--highlight-text-color);
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label */
+.form-label {
+    display: block;
+    font-size: var(--font-size-main);
+    margin-bottom: 5px;
+}
+
+/* Input */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: var(--font-size-main);
+    border: 1px solid var(--main-border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--button-highlight-color);
+    outline: none;
+}
+
+/* Button */
+.form-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 1em;
+    background-color: var(--button-highlight-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: var(--button-highlight-hover-color);
+}
+
+/* error */
+.error p {
+    color: red;
+    font-size: var(--font-size-main);
+}

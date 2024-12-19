@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link type="text/css" rel="stylesheet" href="{% static 'user_profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="">
+            
+        </div>
+
+        <!-- Add block -->
+        {% if is_owner %}
+        <a class="overlay-link" href="{% url 'posts:post_creation' %}">
+            <div class="add-blocktext">
+                <div class="first-line"></div>
+                <div class="second-line"></div>
+            </div>
+        </a>
+        {% endif %}
+
+        <!-- Posts line -->
+        <div class="container-posts-line">
+            {% for post in posts %}
+            <div class="container-post">
+                    <a href="{{ post.get_absolute_url }}"><h1>{{ post.title }}</h1></a>
+                    <div class="content">{{ post.content|truncatechars:500 }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <!-- {% for post in posts %}
+        <div class="blocktext">
+            <div class="text">
+                <a href="{{ post.get_absolute_url }}">
+                    <h3 class="blocktext-name">{{ post.title|truncatechars:50 }}</h3>
+                    <p class="main-text">{{ post.content|linebreaks|truncatechars:200 }}</p>
+                </a>
+            </div>
+            <a class="overlay-link" href="{{ post.get_absolute_url }}"></a>
+        </div>
+        {% endfor %} -->
+    </main>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
